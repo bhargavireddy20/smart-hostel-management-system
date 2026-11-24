@@ -1,0 +1,813 @@
+
+/* =========================================
+   SMARTSTAY LOGIN PAGE
+   ========================================= */
+
+.login-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.login-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 42px clamp(28px, 5vw, 76px) 30px;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 90% 15%, rgb(13 148 136 / 24%), transparent 36%),
+    linear-gradient(145deg, #272d75 0%, #4f46e5 58%, #3730a3 100%);
+}
+
+.login-visual::after {
+  position: absolute;
+  right: -130px;
+  bottom: 12%;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 50%;
+  content: '';
+  box-shadow:
+    0 0 0 42px rgb(255 255 255 / 3%),
+    0 0 0 84px rgb(255 255 255 / 3%);
+  pointer-events: none;
+}
+
+.login-brand,
+.login-brand > span:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.login-brand {
+  gap: 12px;
+}
+
+.login-brand-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 14px;
+  background: rgb(255 255 255 / 13%);
+}
+
+.login-brand > span:last-child {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.login-brand strong {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.login-brand small {
+  color: #d7dcff;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.7px;
+}
+
+.login-message {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 65px 0;
+}
+
+.login-label,
+.welcome-label {
+  color: #0d9488;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.login-label {
+  color: #a5f3e9;
+}
+
+.login-message h1 {
+  margin: 22px 0 18px;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 800;
+  line-height: 1.13;
+  letter-spacing: -2.5px;
+}
+
+.login-message > p {
+  max-width: 400px;
+  color: #e0e7ff;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.login-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-top: 27px;
+}
+
+.login-feature > span {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid rgb(165 243 233 / 40%);
+  border-radius: 50%;
+  background: rgb(13 148 136 / 20%);
+  color: #a5f3e9;
+  font-weight: 700;
+}
+
+.login-feature strong {
+  font-size: 13px;
+}
+
+.login-feature p {
+  margin: 6px 0 0;
+  color: #d5dcfa;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.login-copyright {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #d0d5f8;
+  font-size: 11px;
+}
+
+.login-form-section {
+  display: grid;
+  min-height: 100vh;
+  padding: 40px 28px;
+  place-items: center;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 405px;
+}
+
+.mobile-brand {
+  display: none;
+}
+
+.welcome-label {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.login-form-container h2 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(25px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.login-subtitle {
+  margin: 12px 0 34px;
+  color: #7b8496;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form > label,
+.password-label-row label {
+  margin-bottom: 9px;
+  color: #344054;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.login-input-wrap {
+  display: flex;
+  min-height: 49px;
+  align-items: center;
+  gap: 11px;
+  padding: 0 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  color: #98a2b3;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-input-wrap:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 10%);
+}
+
+.login-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #172033;
+  font-size: 13px;
+}
+
+.login-input-wrap input::placeholder {
+  color: #a5adba;
+}
+
+.password-label-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 23px;
+}
+
+.password-toggle {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  color: #8791a2;
+  cursor: pointer;
+}
+
+.login-submit {
+  display: flex;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 27px;
+  border: 0;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.login-submit:hover {
+  transform: translateY(-1px);
+  background: #4338ca;
+}
+
+.login-submit span {
+  font-size: 18px;
+}
+
+.login-help {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 24px;
+  padding: 13px;
+  border: 1px solid #e0f2f1;
+  border-radius: 9px;
+  background: #f0fdfa;
+  color: #0f766e;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.login-help svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.login-footer {
+  margin-top: 35px;
+  color: #8b95a5;
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* =========================================
+   SMARTSTAY ATTENDANCE PAGE
+   ========================================= */
+
+.attendance-management {
+  width: 100%;
+  min-width: 0;
+  color: #172033;
+}
+
+.attendance-management .student-page-heading,
+.attendance-management .student-directory-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.attendance-management .student-page-heading h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.attendance-management .student-page-heading p,
+.attendance-management .student-directory-heading p {
+  margin: 7px 0 0;
+  color: #7b8496;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Buttons */
+
+.attendance-management .student-page-heading button,
+.attendance-management .student-add-button,
+.attendance-management .student-cancel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 10px 14px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.attendance-management .student-add-button {
+  border: 1px solid #4f46e5;
+  background: #4f46e5;
+  color: #fff;
+}
+
+.attendance-management .student-add-button:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.attendance-management .student-cancel-button {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #344054;
+}
+
+.attendance-management .student-cancel-button:hover {
+  background: #f5f6ff;
+  border-color: #c7d2fe;
+}
+
+.attendance-management button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Student form and date panel */
+
+.attendance-management .student-add-form {
+  margin-bottom: 20px;
+  padding: 22px;
+  border: 1px solid #e8ebf2;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.attendance-management .student-add-form h3 {
+  margin: 0 0 8px;
+  color: #172033;
+  font-size: 17px;
+}
+
+.attendance-management .student-add-form > p {
+  color: #7b8496;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.attendance-management .student-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.attendance-management .student-form-grid label {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.attendance-management .student-form-grid label > span,
+.attendance-management .student-form-grid > div > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #475467;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.attendance-management .student-form-grid input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #dfe4ec;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #172033;
+  font: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.attendance-management .student-form-grid input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 10%);
+}
+
+.attendance-management .student-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.attendance-management .student-form-actions > p {
+  margin: 0;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Feedback messages */
+
+.attendance-management .student-message {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 13px 15px;
+  border: 1px solid #a7f3d0;
+  border-radius: 9px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.attendance-management .student-message button {
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Summary cards */
+
+.attendance-management .student-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.attendance-management .student-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid #e8ebf2;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.attendance-management .student-summary-card > svg {
+  flex-shrink: 0;
+  color: #4f46e5;
+}
+
+.attendance-management .student-summary-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.attendance-management .student-summary-card span {
+  color: #7b8496;
+  font-size: 12px;
+}
+
+.attendance-management .student-summary-card strong {
+  color: #172033;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+/* Search and filter */
+
+.attendance-management .student-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.attendance-management .student-search {
+  display: flex;
+  flex: 1;
+  min-width: 200px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #fff;
+  color: #98a2b3;
+}
+
+.attendance-management .student-search input {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #172033;
+  font: inherit;
+  font-size: 12px;
+}
+
+.attendance-management .student-status-filter {
+  min-height: 42px;
+  padding: 9px 28px 9px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #fff;
+  color: #344054;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Warden actions */
+
+.attendance-management .room-header-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.attendance-management .student-directory-heading h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+/* Attendance dropdown */
+
+.attendance-management .attendance-status-select {
+  box-sizing: border-box;
+  width: 140px;
+  max-width: 100%;
+  min-height: 38px;
+  padding: 8px 28px 8px 10px;
+  border: 1px solid #d7dce3;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #344054;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.attendance-management .attendance-status-select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgb(79 70 229 / 12%);
+}
+
+/* Resident table */
+
+.attendance-management .student-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e8ebf2;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.attendance-management .student-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.attendance-management .student-table th {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e8ebf2;
+  background: #f8f9fc;
+  color: #667085;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.attendance-management .student-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #edf0f5;
+  color: #344054;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.attendance-management .student-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.attendance-management .student-table tbody tr:hover {
+  background: #fafbff;
+}
+
+.attendance-management .complaint-title-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.attendance-management .complaint-title-cell strong {
+  color: #172033;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.attendance-management .student-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.attendance-management .student-status.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.attendance-management .student-status.overdue {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.attendance-management .student-status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.attendance-management .student-empty-state {
+  padding: 35px 15px;
+  color: #7b8496;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Attendance notes */
+
+.attendance-management .attendance-note {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.attendance-management > .attendance-note {
+  margin-top: 18px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+  .attendance-management .student-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .attendance-management .student-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .attendance-management .student-page-heading h2 {
+    font-size: 21px;
+  }
+
+  .attendance-management .student-add-form {
+    padding: 16px;
+  }
+
+  .attendance-management .student-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .attendance-management .student-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .attendance-management .student-search {
+    min-width: 0;
+  }
+
+  .attendance-management .student-status-filter {
+    width: 100%;
+  }
+
+  .attendance-management .student-summary-card {
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .attendance-management .student-summary-card strong {
+    font-size: 20px;
+  }
+
+  .attendance-management .student-directory-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .attendance-management .student-form-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .attendance-management .student-table th,
+  .attendance-management .student-table td {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .login-visual {
+    padding: 24px 20px;
+  }
+
+  .login-message h1 {
+    font-size: 35px;
+    letter-spacing: -1.5px;
+  }
+
+  .login-form-section {
+    padding: 38px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .attendance-management .student-summary-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .attendance-management .attendance-status-select {
+    width: 125px;
+  }
+}
